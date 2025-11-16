@@ -24,12 +24,12 @@ export default function MoscowPage() {
   const [imageUrl, setImageUrl] = useState("/defoult.png"); 
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
 
-  // Убираем элемент по id
+
   const deleteBlock = (id: number) => {
     setProducts(prev => prev.filter(card => card.id !== id));
   }
 
-  // Переключаем статус
+  
   const toggleStatus = (id: number) => {
     setProducts(prev => prev.map(p => {
       if(p.id !== id) return p;
@@ -43,7 +43,7 @@ export default function MoscowPage() {
     }))
   }
 
-  // Добавляем новый продукт
+  
   const addProduct = (product: NewProduct) => {
     setProducts(prev => [
       ...prev,
@@ -60,17 +60,17 @@ export default function MoscowPage() {
     ]);
   };
 
-  // Открываем модалку для редактирования
+
   const openEditModal = (product: Product) => {
     setEditingProduct(product);
   };
 
-  // Сохраняем изменения
+
   const updateProduct = (updatedProduct: Product) => {
     setProducts(prev =>
       prev.map(p => (p.id === updatedProduct.id ? updatedProduct : p))
     );
-    setEditingProduct(null); // закрываем модалку
+    setEditingProduct(null);
   };
 
   return (
