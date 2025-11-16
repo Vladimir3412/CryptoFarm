@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-// ---------------- типы ----------------
+
 interface Product {
   id: number;
   name: string;
@@ -42,14 +42,14 @@ interface MoscowDialogProps {
   setImageUrl: (url: string) => void;
 }
 
-// ---------------- компонент ----------------
+
 export function MoscowDialog({ onAdd, onSave, product, imageUrl, setImageUrl }: MoscowDialogProps) {
   const [name, setName] = useState("");
   const [hashrate, setHashrate] = useState("");
   const [income, setIncome] = useState("");
   const [open, setOpen] = useState(false);
 
-  // Когда выбираем продукт для редактирования — открываем модалку и заполняем поля
+
   useEffect(() => {
     if (product) {
       setOpen(true);
@@ -76,7 +76,7 @@ export function MoscowDialog({ onAdd, onSave, product, imageUrl, setImageUrl }: 
       onAdd({ name, hashrate, income, img: imageUrl });
     }
 
-    // сброс формы
+
     setName("");
     setHashrate("");
     setIncome("");
